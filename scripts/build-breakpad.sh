@@ -16,6 +16,9 @@ cd google-breakpad
 mkdir -p ${PREFIX}
 rsync -a --exclude="*.svn" ./src ${PREFIX}/
 ./configure --prefix=${PREFIX}
+aclocal
+autoreconf
+automake
 make install
 if test -z "${SKIP_CHECK}"; then
   #FIXME: Breakpad tests hang on Jenkins CI   
