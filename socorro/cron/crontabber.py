@@ -141,7 +141,7 @@ class JSONAndPostgresJobDatabase(JSONJobDatabase):
                 if json_dump != '{}':
                     with open(file_path, 'w') as f:
                         f.write(json_dump)
-            except ValueError:
+            except (ValueError, TypeError):
                 pass
 
 
